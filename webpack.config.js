@@ -6,7 +6,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -26,6 +27,7 @@ module.exports = {
   devServer: {
     port: 3000,
     host: '0.0.0.0',
-    public: 'kong.sparcs.org:7300'
+    public: 'kong.sparcs.org:7300',
+    historyApiFallback: true
   }
 }
