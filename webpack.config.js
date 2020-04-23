@@ -20,5 +20,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         })
-    ]
+    ],
+    devServer: {
+        port: 3000,
+        host: '0.0.0.0',
+        public: 'kong.sparcs.org:7300'
+    }
 }
