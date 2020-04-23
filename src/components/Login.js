@@ -1,13 +1,14 @@
 import React from 'react'
 import SSOClient from '../utils/sso'
+import './Login.css'
 
 const Login = () => {
   const { url, state } = SSOClient.getLoginParams()
-  console.log(url, state)
-  console.log(localStorage)
 
   return (
-    <button>LOGIN</button>
+    <div>
+      <button>LOGIN</button>
+    </div>
   )
 }
 export default Login
