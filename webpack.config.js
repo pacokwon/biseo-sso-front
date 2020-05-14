@@ -1,12 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
+const crypto = require('crypto')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js',
+    filename: `bundle.${crypto.createHash('sha1').update(Math.random().toString()).digest('hex')}.js`,
     publicPath: '/'
   },
   module: {
@@ -25,8 +25,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    }),
-    new Dotenv()
+    })
   ],
   devServer: {
     port: 3000,
