@@ -1,14 +1,12 @@
 import React from 'react'
-import SSOClient from '../utils/sso'
+import { useHistory } from 'react-router-dom'
 import './Login.css'
 
-const Login = () => {
-  const { url, state } = SSOClient.getLoginParams()
+const Login = () => (
+  <div>
+    <a href='/login/redirect'>LOGIN</a>
+  </div>
+)
 
-  return (
-    <div>
-      <button>LOGIN</button>
-    </div>
-  )
-}
+
 export default Login
